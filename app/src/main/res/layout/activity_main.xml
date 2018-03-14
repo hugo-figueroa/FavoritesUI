@@ -12,8 +12,12 @@
         android:layout_height="170dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        app:condition_type="new"
+        app:free_shipping="true"
+        app:imported="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:plus_level="1" />
 
     <com.favorites.ui.controls.FUICollectionView
         android:id="@+id/fuiCV"
@@ -22,6 +26,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fuiFavorite" />
+        app:layout_constraintTop_toBottomOf="@+id/fuiFavorite"
+        app:collection_image1="@drawable/ic_nd_ic_add_fav_on_32"
+        app:collection_image2="@drawable/ic_nd_ic_add_fav_on_32"
+        app:collection_image3="@drawable/ic_nd_ic_add_fav_on_32"
+        app:collection_title="Celulares"
+        app:collection_quantity="1"/>
 
 </android.support.constraint.ConstraintLayout>

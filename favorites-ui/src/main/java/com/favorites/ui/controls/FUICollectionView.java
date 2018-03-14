@@ -1,6 +1,7 @@
 package com.favorites.ui.controls;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
@@ -21,11 +22,11 @@ public class FUICollectionView extends LinearLayout {
 
     public FUICollectionView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        initViews();
+        initViews(context, attrs);
     }
 
-    public void initViews() {
-        inflate(this.getContext(), R.layout.fui_collection_view, this);
+    public void initViews(Context context, @Nullable AttributeSet attrs) {
+        inflate(context, R.layout.fui_collection_view, this);
 
         imgvCollectionItem1 = findViewById(R.id.imgvCollectionItem1);
         imgvCollectionItem2 = findViewById(R.id.imgvCollectionItem2);
@@ -34,6 +35,21 @@ public class FUICollectionView extends LinearLayout {
         txvCollectionTitle = findViewById(R.id.txvCollectionTitle);
         txvCollectionQuantity = findViewById(R.id.txvCollectionQuantity);
 
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FUICollectionView);
+
+        Drawable collection_image1 = a.getDrawable(R.styleable.FUICollectionView_collection_image1);
+        Drawable collection_image2 = a.getDrawable(R.styleable.FUICollectionView_collection_image2);
+        Drawable collection_image3 = a.getDrawable(R.styleable.FUICollectionView_collection_image3);
+        String collection_title = a.getString(R.styleable.FUICollectionView_collection_title);
+        Integer collection_quantity = a.getInteger(R.styleable.FUICollectionView_collection_quantity, -1);
+
+        a.recycle();
+
+        setCollectionImage1Drawable(collection_image1);
+        setCollectionImage2Drawable(collection_image2);
+        setCollectionImage3Drawable(collection_image3);
+        setCollectionTitle(collection_title);
+        setCollectionQuantity(collection_quantity);
     }
 
     public void setCollectionImage1Drawable(Drawable drawable) {
@@ -71,9 +87,9 @@ public class FUICollectionView extends LinearLayout {
             txvCollectionTitle.setText(collectionTitle);
     }
 
-    public void setCollectionQuantity(String collectionQuantity) {
-        if (collectionQuantity != null)
-            txvCollectionTitle.setText(collectionQuantity);
+    public void setCollectionQuantity(int collectionQuantity) {
+        if (collectionQuantity >= 0)
+            txvCollectionQuantity.setText("" + collectionQuantity);
     }
 
 }
