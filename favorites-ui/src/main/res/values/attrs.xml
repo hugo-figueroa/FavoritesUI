@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FUIFavoritesView">
+        <attr name="product_image" format="reference" />
+        <attr name="condition_type" format="string" />
+        <attr name="plus_level" format="integer" />
+        <attr name="imported" format="boolean" />
+        <attr name="free_shipping" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FUICollectionView">
+        <attr name="collection_image1" format="reference" />
+        <attr name="collection_image2" format="reference" />
+        <attr name="collection_image3" format="reference" />
+        <attr name="collection_title" format="string" />
+        <attr name="collection_quantity" format="integer" />
+    </declare-styleable>
+</resources>
