@@ -35,7 +35,7 @@ public class FUIFavoritesView extends LinearLayout {
     }
 
     public void setData(String conditionType, int plusLevel, boolean imported, boolean freeShipping) {
-        if (conditionType.equals(FUIConstants.FUI_NEW)) {
+        if (conditionType != null && conditionType.equals(FUIConstants.FUI_NEW)) {
             imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_new_30));
         } else if (conditionType.equals(FUIConstants.FUI_REFURBISEHD)) {
             imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_refurbished_30));
@@ -51,48 +51,58 @@ public class FUIFavoritesView extends LinearLayout {
             imgvImported.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_international_30));
         }
 
-        if(freeShipping){
+        if (freeShipping) {
             imgvFreeShipping.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_free_shipping_30));
         }
     }
 
     public void setProductImageDrawable(Drawable drawable) {
-        imgvProduct.setImageDrawable(drawable);
+        if (drawable != null)
+            imgvProduct.setImageDrawable(drawable);
     }
 
     public void setProductImageBitmap(Bitmap bitmap) {
-        imgvProduct.setImageBitmap(bitmap);
+        if (bitmap != null)
+            imgvProduct.setImageBitmap(bitmap);
     }
 
     public void setConditionTypeImageDrawable(Drawable drawable) {
-        imgvConditionType.setImageDrawable(drawable);
+        if (drawable != null)
+            imgvConditionType.setImageDrawable(drawable);
     }
 
     public void setConditionTypeImageBitmap(Bitmap bitmap) {
-        imgvConditionType.setImageBitmap(bitmap);
+        if (bitmap != null)
+            imgvConditionType.setImageBitmap(bitmap);
     }
 
     public void setPlusLevelImageDrawable(Drawable drawable) {
-        imgvPlusLevel.setImageDrawable(drawable);
+        if (drawable != null)
+            imgvPlusLevel.setImageDrawable(drawable);
     }
 
     public void setPlusLevelImageBitmap(Bitmap bitmap) {
-        imgvPlusLevel.setImageBitmap(bitmap);
+        if (bitmap != null)
+            imgvPlusLevel.setImageBitmap(bitmap);
     }
 
     public void setImportedImageDrawable(Drawable drawable) {
-        imgvImported.setImageDrawable(drawable);
+        if (drawable != null)
+            imgvImported.setImageDrawable(drawable);
     }
 
     public void setImportedImageBitmap(Bitmap bitmap) {
-        imgvImported.setImageBitmap(bitmap);
+        if (bitmap != null)
+            imgvImported.setImageBitmap(bitmap);
     }
 
     public void setFreeShippingImageDrawable(Drawable drawable) {
-        imgvFreeShipping.setImageDrawable(drawable);
+        if (drawable != null)
+            imgvFreeShipping.setImageDrawable(drawable);
     }
 
     public void setFreeShippingImageBitmap(Bitmap bitmap) {
-        imgvFreeShipping.setImageBitmap(bitmap);
+        if (bitmap != null)
+            imgvFreeShipping.setImageBitmap(bitmap);
     }
 }
