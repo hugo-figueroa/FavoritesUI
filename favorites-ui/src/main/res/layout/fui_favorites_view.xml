@@ -10,40 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linConditions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/imgvConditionType"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitCenter" />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/imgvPlusLevel"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitCenter" />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/imgvImported"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitCenter" />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/imgvFreeShipping"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitCenter" />
-
-        </LinearLayout>
-
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/imgvProduct"
             android:layout_width="0dp"
@@ -65,6 +31,41 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_nd_ic_add_fav_on_32" />
+
+        <LinearLayout
+            android:id="@+id/linConditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgvConditionType"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_nd_ic_new_30"
+                android:scaleType="fitCenter" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgvPlusLevel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitCenter" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgvImported"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitCenter" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgvFreeShipping"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitCenter" />
+
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 
