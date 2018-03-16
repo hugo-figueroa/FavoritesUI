@@ -56,7 +56,7 @@ public class FUIFavoritesView extends LinearLayout {
 
         if (conditionType != null && conditionType.equals(FUIConstants.FUI_NEW)) {
             imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_new_30));
-        } else if (conditionType.equals(FUIConstants.FUI_REFURBISEHD)) {
+        } else if (conditionType != null && conditionType.equals(FUIConstants.FUI_REFURBISEHD)) {
             imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_refurbished_30));
         } else {
             imgvConditionType.setVisibility(GONE);
@@ -131,5 +131,46 @@ public class FUIFavoritesView extends LinearLayout {
     public void setFreeShippingImageBitmap(Bitmap bitmap) {
         if (bitmap != null)
             imgvFreeShipping.setImageBitmap(bitmap);
+    }
+
+    public void setConditionType(String conditionType) {
+        imgvConditionType.setVisibility(VISIBLE);
+        if (conditionType != null && conditionType.equals(FUIConstants.FUI_NEW)) {
+            imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_new_30));
+        } else if (conditionType != null && conditionType.equals(FUIConstants.FUI_REFURBISEHD)) {
+            imgvConditionType.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_refurbished_30));
+        } else {
+            imgvConditionType.setVisibility(GONE);
+        }
+    }
+
+    public void setPlusLevel(int plusLevel) {
+        imgvPlusLevel.setVisibility(VISIBLE);
+
+        if (plusLevel == FUIConstants.FUI_PLUS_LEVEL_1) {
+            imgvPlusLevel.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_plus_30));
+        } else if (plusLevel == FUIConstants.FUI_PLUS_LEVEL_2) {
+            imgvPlusLevel.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_plus_48_30));
+        } else {
+            imgvPlusLevel.setVisibility(GONE);
+        }
+    }
+
+    public void setFreeShipping(boolean isFreeShipping) {
+        imgvFreeShipping.setVisibility(VISIBLE);
+        if (isFreeShipping) {
+            imgvFreeShipping.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_free_shipping_30));
+        } else {
+            imgvFreeShipping.setVisibility(GONE);
+        }
+    }
+
+    public void setImported(boolean isImported) {
+        imgvImported.setVisibility(VISIBLE);
+        if (isImported) {
+            imgvImported.setImageDrawable(getResources().getDrawable(R.drawable.ic_nd_ic_international_30));
+        } else {
+            imgvImported.setVisibility(GONE);
+        }
     }
 }
